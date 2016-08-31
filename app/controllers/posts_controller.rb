@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
 
   def index
-    @content_first = "This is the first sample text"
-    @content_second = "This is the second sample text"
+    #@content_first = "This is the first sample text"
+    #@content_second = "This is the second sample text"
+    @posts = Post.all #from database model
   end
 
   def new

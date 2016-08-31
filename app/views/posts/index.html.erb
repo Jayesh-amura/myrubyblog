@@ -1,8 +1,5 @@
 <h1>BLOG POSTS</h1>
-<h3>Sample Post One</h3>
-<p><%= @content_first %></p>
-
-
-<h3>Sample Post Two</h3>
-<p><%= @content_second %></p>
-
+<% @posts.each do |post| %>
+  <h3><%= post.title %></h3>
+  <p><%= post.body %></p>
+<% end %>
