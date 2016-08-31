@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
+  get 'categories/index'
+
+  get 'categories/edit'
+
+  get 'categories/new'
+
+  get 'categories/show'
+
   get 'home/index'    #will let you access by /home/index
   root :to => 'home#index'   #set home index as root
 
   resources :posts  #posts is the controller
+  resources :categories #resouces declared to use in the url
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
