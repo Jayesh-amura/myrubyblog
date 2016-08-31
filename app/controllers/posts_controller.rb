@@ -6,6 +6,12 @@ class PostsController < ApplicationController
     @posts = Post.all #from database model
   end
 
+
+  def show
+    #grab id from url
+    @post = Post.find(params[:id])
+  end
+
   def new
 
   end
@@ -19,10 +25,6 @@ class PostsController < ApplicationController
   end
 
   def update
-
-  end
-
-  def show
 
   end
 
