@@ -32,12 +32,22 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
+
+    if @post.update_attributes(post_params)
+      redirect_to post_path, :notice => "Your Post has been updated"
+    else
+      render "edit"
+    end
 
   end
+
 
   def destroy
 
   end
+
+  
   private
 
     def post_params
