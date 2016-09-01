@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'pages/about'
+
+  get 'pages/contact'
+
+  get 'pages/resources'
+
   get 'categories/index'
 
   get 'categories/edit'
@@ -12,7 +18,10 @@ Rails.application.routes.draw do
 
   resources :posts  #posts is the controller
   resources :categories #resouces declared to use in the url
-  
+
+  match '/about',:via => [:get, :post],:to => 'pages#about'
+  match '/contact',:via => [:get, :post],:to => 'pages#contact'
+  match '/resources',:via => [:get, :post],:to => 'pages#resources'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
