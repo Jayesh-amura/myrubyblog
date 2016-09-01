@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   # GET /categories
-  # GET /categories.json
+  # GET /categories_urls.json
   def index
     @categories = Category.all
   end
@@ -10,6 +10,9 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @category = Category.find(set_category)
+    @title = @category.name
+    @posts = @category.posts
   end
 
   # GET /categories/new
